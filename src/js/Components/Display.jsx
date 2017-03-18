@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 
-class Display extends React.Component{
-  render(){
-    return(
-      <div className="calc-display">
-        {this.props.displayVal}
-      </div>
-    );
-  }
-};
+const Display = (props) => (
+  <div className='calc-display'>
+    {props.displayVal}
+  </div>
+)
+
+Display.propTypes = {
+  displayVal: PropTypes.string.isRequired
+}
 
 export default Display
