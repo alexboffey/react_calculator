@@ -1,0 +1,62 @@
+$buttonSize: 65px;
+$black: #343838;
+$transBlack: rgba(0, 0, 0, 0.3);
+$gold: #CDB380;
+$cloud: #5E6F8C;
+$purp: #542437;
+
+body{
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font:{
+		family: 'Roboto Mono';
+		size: 16px;
+	}
+	background: linear-gradient(to bottom right, $purp 0%, $gold 100%) 100% no-repeat;
+}
+button{
+	width: $buttonSize;
+	height: $buttonSize;
+	font:{
+		family: 'Roboto Mono';
+		size: 16px;
+	}
+	background: none;
+	color: $gold;
+	border: none;
+	cursor: pointer;
+	transition: color 300ms ease-in-out;
+	&:hover{
+		color: $cloud;
+	}
+	&:focus{
+		outline: none;
+	}
+}
+.calculator {
+	width: calc(4 * #{$buttonSize});
+	background: $black;
+	box-shadow: 0 0 $buttonSize 0 $transBlack;
+}
+.calc-display{
+	font-size: 18px;
+	padding: 26px 20px;
+	text-align: right;
+	color: $gold;
+	border-bottom: 3px solid $cloud;
+	box-shadow: 0 5px 21px -5px $transBlack;
+}
+.calc-numbers{
+	width: calc(3 * #{$buttonSize});
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	float: left;
+}
+.calc-functions{
+	float: left;
+}
