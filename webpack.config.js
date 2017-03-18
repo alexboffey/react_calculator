@@ -12,7 +12,6 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx']
   },
-  devtool: 'cheap-eval-source-map',
   module: {
     rules: [
       {
@@ -31,7 +30,7 @@ module.exports = {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader']
+          use: ['css-loader', 'postcss-loader', 'sass-loader']
         })
       }
     ]
