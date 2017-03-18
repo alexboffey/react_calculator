@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import Button from './Button'
+import Operations from './Operations'
+import Functions from './Functions'
+import Numbers from './Numbers'
+import Display from './Display'
 
 class Calculator extends React.Component{
   constructor () {
@@ -150,94 +154,12 @@ class Calculator extends React.Component{
 
 
 
-class Operations extends React.Component{
-  _handleOper(oper){
-    switch (oper){
-      case "+":
-      case "-":
-      case "*":
-      case "/":
-        this.props._addToCalc(oper);
-        break;
-      case "=":
-        this.props._calcResult(oper);
-        break;
-      default:
-        console.log("Something went wrong...");
-    }
-  }
-  render(){
-    return(
-      <div className="calc-operations">
-        {this.props.operations.map((operation) => {
-          return <Button
-                   button={operation}
-                   _handleOper={this._handleOper.bind(this)}
-                  />;
-        })}
-      </div>
-    );
-  }
-};
 
-class Functions extends React.Component{
-  _handleFunct(funct){
-    // Conditional to call appropriate function
-    switch (funct){
-      case "c":
-        this.props._clearVals();
-        break;
-      case "±":
-        this.props._swapSign();
-        break;
-      case ".":
-        this.props._insDecimal();
-        break;
-      default:
-        console.log("Something went wrong...");
-    }
-  }
-  render(){
-    return(
-      <div className="calc-functions">
-        {this.props.functions.map((funct) => {
-           return <Button
-                   button={funct}
-                   _handleFunct={this._handleFunct.bind(this)}
-                  />;
-        })}
-      </div>
-    );
-  }
-};
 
-class Numbers extends React.Component{
-  _handleNum(num){
-    const parsedNum = num.toString();
-    this.props._displayNum(parsedNum);
-  }
-  render(){
-    return(
-      <div className="calc-numbers">
-        {this.props.numbers.map((number) => {
-          return <Button
-                   button={number}
-                   _handleNum={this._handleNum.bind(this)}
-                  />;
-        })}
-      </div>
-    );
-  }
-};
 
-class Display extends React.Component{
-  render(){
-    return(
-      <div className="calc-display">
-        {this.props.displayVal}
-      </div>
-    );
-  }
-};
+
+
+
+
 
 export default Calculator
