@@ -1,5 +1,6 @@
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
   context: path.resolve(__dirname, './src'),
@@ -41,6 +42,7 @@ module.exports = {
     port: 8080
   },
   plugins: [
-    new ExtractTextPlugin('style.bundle.css')
+    new ExtractTextPlugin('style.bundle.css'),
+    new UglifyJSPlugin({ compress: true })
   ]
 }
