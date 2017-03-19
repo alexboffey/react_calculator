@@ -42,6 +42,8 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin('style.bundle.css'),
-    new UglifyJSPlugin({ compress: true })
+    new UglifyJSPlugin({
+      compress: { warnings: false }
+    })
   ]
 }
